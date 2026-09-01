@@ -52,6 +52,18 @@ Ao final da execução do notebook, o sistema gera visualizações cruciais para
 
 ---
 
+### Estrutura e Execução
+**Ambiente:** O notebook pode ser executado em IDEs locais (Jupyter Lab, VS Code) ou ambientes em nuvem (Google Colab).
+
+**Dataset:** Certifique-se de que o arquivo Cloud_Dataset.csv está no mesmo diretório raiz do notebook (ou faça o upload para o ambiente do Colab quando solicitado nas primeiras células).
+
+* **Fluxo de Células:**
+O código está parametrizado. As células iniciais definem configurações globais (como a seed para reprodutibilidade e estilos do matplotlib).
+As funções de agregação de dados e resampling temporal (resample('1h')) foram escritas utilizando métodos nativos do Pandas, o que permite fácil modificação da janela de tempo (ex: alterar para '1D' para visões diárias).
+**Exportação de Artefatos:** Os gráficos finais são automaticamente salvos no diretório atual (ex: time_series_plot.png), facilitando a extração dos resultados para apresentações executivas.
+
+---
+
 ## Usabilidade do Código e Guia de Execução
 
 O código foi desenvolvido visando alta legibilidade, modularidade e fácil reprodução.
@@ -66,12 +78,4 @@ seaborn
 scipy
 scikit-learn
 
-### Estrutura e Execução
-Ambiente: O notebook pode ser executado em IDEs locais (Jupyter Lab, VS Code) ou ambientes em nuvem (Google Colab).
-
-Dataset: Certifique-se de que o arquivo Cloud_Dataset.csv está no mesmo diretório raiz do notebook (ou faça o upload para o ambiente do Colab quando solicitado nas primeiras células).
-
-Fluxo de Células:
-O código está parametrizado. As células iniciais definem configurações globais (como a seed para reprodutibilidade e estilos do matplotlib).
-As funções de agregação de dados e resampling temporal (resample('1h')) foram escritas utilizando métodos nativos do Pandas, o que permite fácil modificação da janela de tempo (ex: alterar para '1D' para visões diárias).
-Exportação de Artefatos: Os gráficos finais são automaticamente salvos no diretório atual (ex: time_series_plot.png), facilitando a extração dos resultados para apresentações executivas.
+---
